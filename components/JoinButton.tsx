@@ -8,6 +8,8 @@ interface JoinButtonProps {
   size?: "sm" | "md" | "lg";
   href?: string;
   icon?: ReactNode;
+  bgColor?: string;
+  style?: React.CSSProperties;
 }
 
 export default function JoinButton({
@@ -16,6 +18,8 @@ export default function JoinButton({
   size = "md",
   href = TELEGRAM_URL,
   icon,
+  bgColor,
+  style,
 }: JoinButtonProps) {
   const sizes = {
     sm: "text-xs px-4 py-2",
@@ -29,7 +33,7 @@ export default function JoinButton({
       target="_blank"
       rel="noreferrer"
       className={`ev-cta inline-flex items-center justify-center gap-2 rounded-full font-semibold text-black transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 ${sizes[size]} ${className}`}
-      style={{ background: ACCENT }}
+      style={{ background: bgColor || ACCENT, ...style }}
     >
       {icon ? icon : <Send size={size === "lg" ? 20 : 18} strokeWidth={2.25} />}
       {children}

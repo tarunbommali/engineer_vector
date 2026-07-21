@@ -31,6 +31,7 @@ import LaunchCountdown from "@/components/LaunchCountdown";
 import Reveal from "@/components/Reveal";
 import ShareBar, { TELEGRAM_URL, ACCENT } from "@/components/ShareBar";
 import { SectionEyebrow, VectorDivider } from "@/components/VectorDivider";
+import WhatsappIcon from "@/components/WhatsappIcon";
 
 export default function EngineerVectorLanding() {
   const [openFaq, setOpenFaq] = useState<number>(0);
@@ -126,9 +127,11 @@ export default function EngineerVectorLanding() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <JoinButton size="sm" className="hidden sm:inline-flex shadow-lg shadow-[#6C63FF]/20 hover:shadow-[#6C63FF]/40 transition-shadow">
-              Join Telegram
-            </JoinButton>
+            <div className="hidden sm:block">
+              <JoinButton size="sm" className="shadow-lg shadow-[#6C63FF]/20 hover:shadow-[#6C63FF]/40 transition-shadow">
+                Join Telegram
+              </JoinButton>
+            </div>
             <a
               href={TELEGRAM_URL}
               target="_blank"
@@ -464,7 +467,9 @@ export default function EngineerVectorLanding() {
             <JoinButton
               size="lg"
               href="https://wa.me/919581193026?text=Hi%20Engineer%20Vector%20Team%2C%20I%20want%20to%20join!"
-              className="shadow-2xl shadow-[#6C63FF]/20 hover:shadow-[#6C63FF]/40 transition-all hover:scale-105"
+              bgColor="#25D366"
+              icon={<WhatsappIcon size={20} className="text-black" />}
+              className="shadow-2xl shadow-[#25D366]/30 hover:shadow-[#25D366]/50 transition-all hover:scale-105"
             >
               Join Team Contact
             </JoinButton>
